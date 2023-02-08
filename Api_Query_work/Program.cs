@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using RestSharp;
 using System.Collections.Generic;
+using System.Text.Json.Nodes;
 
 var key = new ApiKey();
 
@@ -13,15 +14,11 @@ var response = client.Execute(request).Content;
 
 var root = JsonConvert.DeserializeObject<List<Chuck_Root>>(response);
 
+
 foreach(var item in root) 
 {
     Console.WriteLine(item.id);
-    Console.WriteLine(item.created_at);
-    Console.WriteLine(item.updated_at);
-    Console.WriteLine(item.url);
-    Console.WriteLine(item.value);
-    Console.WriteLine(item.icon_url);
-    Console.WriteLine();
-    Console.WriteLine();
-    Console.WriteLine("=============================");
+
+
 }
+
