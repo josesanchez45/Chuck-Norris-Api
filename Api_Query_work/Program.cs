@@ -12,13 +12,7 @@ request.AddHeader("accept", "application/json");
 request.AddHeader("X-RapidAPI-Key", key.Api());
 var response = client.Execute(request).Content;
 
-var root = JsonConvert.DeserializeObject<List<Chuck_Root>>(response);
+var root = JsonConvert.DeserializeObject<Chuck_Root>(response);
 
-
-foreach(var item in root) 
-{
-    Console.WriteLine(item.id);
-
-
-}
+Console.WriteLine(root.value);
 
